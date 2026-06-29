@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Scan thrifty-ui's source so Tailwind generates the utility classes used
+ * inside the kit's components. thrifty-ui ships as source for exactly this
+ * reason: your Tailwind build compiles it, so its utilities and theme tokens
+ * resolve in your app with no extra step. Without this @source line the kit's
+ * panels render unstyled (their utilities are silently absent). */
+@source "../node_modules/thrifty-ui";
+
+/* The kit's CSS surface — @theme blocks, keyframes, and :root token defaults.
+ * Imported after `@import "tailwindcss"` so Tailwind's preflight establishes
+ * first; the kit's @theme declarations layer on top. Live theme edits from the
+ * studio route override these :root defaults via useThemeRoot (see
+ * src/theme-context.tsx). */
+@import "thrifty-ui/styles.css";
