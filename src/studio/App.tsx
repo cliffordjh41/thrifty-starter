@@ -30,16 +30,15 @@ import { useStudioStore, type ContentPanelId } from "./store/studio-store"
 
 // Optional back-button hook: when set, studio's L column header (and
 // mobile sheet header) renders a back-arrow to the left of the Copy
-// CSS button that invokes this callback. Used by cliffordjh's /demo
-// route to return to /portfolio/thrifty-ui without studio having to
-// import react-router. Standalone studio leaves this undefined and
-// renders no back-arrow.
+// CSS button that invokes this callback. A host app wires it to return
+// to its own route without studio having to import react-router.
+// Standalone studio leaves this undefined and renders no back-arrow.
 interface AppProps {
   onBack?: () => void
   // When set, studio renders a floating "artboard" chip (top-right, mirror
-  // of the back chip) that opens the host's artboard demo. cliffordjh wires
-  // it to navigate to /artboard; standalone studio leaves it undefined and
-  // renders no chip.
+  // of the back chip) that opens the host's artboard demo. A host wires it
+  // to navigate to its artboard route; standalone studio leaves it undefined
+  // and renders no chip.
   onOpenArtboard?: () => void
 }
 
@@ -168,7 +167,7 @@ function App({ onBack, onOpenArtboard }: AppProps = {}) {
 
   // STYLING-header controls — a 3-col row [Back | Copy CSS | Artboard], shared
   // by the desktop L column header and the mobile left sheet header. Back +
-  // Artboard render only when the host supplies their callbacks (cliffordjh
+  // Artboard render only when the host supplies their callbacks (host
   // embed); standalone studio shows just the centered Copy CSS.
   const stylingHeaderControls = (
     <div className="w-full grid grid-cols-3 items-center text-[10px] font-(--theme-font-weight) uppercase tracking-(--theme-letter-spacing)">

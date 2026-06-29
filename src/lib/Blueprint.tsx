@@ -204,7 +204,7 @@ export function Blueprint() {
         <g fill={INK} stroke="none" fontFamily="ui-monospace, monospace">
           <text x={10} y={26} fontSize={15} letterSpacing={1}>THRIFTY · ARTBOARD</text>
           <text x={10} y={60} fontSize={9} fill={INK_DIM}>DRAWN</text>
-          <text x={10} y={75} fontSize={11}>C. HEENAN</text>
+          <text x={10} y={75} fontSize={11}>YOUR NAME</text>
           <text x={10} y={94} fontSize={9} fill={INK_DIM}>units</text>
           <text x={10} y={119} fontSize={9} fill={INK_DIM}>SCALE</text>
           <text x={120} y={119} fontSize={9} fill={INK_DIM}>PROJ</text>
